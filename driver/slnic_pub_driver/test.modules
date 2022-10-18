@@ -1,0 +1,13 @@
+#!/bin/sh
+counter=$(lspci | grep Eth | grep 8009:0003 | wc -l)
+if [ "${counter}" -ge 1 ]; then
+    /sbin/modprobe sl_nic >/dev/null 2>&1
+    mkdir /dev/slnic
+    mknod /dev/slnic/register  c 224 1
+    mknod /dev/slnic/stream  c 225 1
+    mknod /dev/slnic/slnic  c 226 1	
+    chmod -R o+r+w /dev/slnic/
+    ifconfig slnic0 up
+    ifconfig slnic1 up
+fi
+exit 0
