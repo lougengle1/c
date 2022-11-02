@@ -1,5 +1,0 @@
-rmmod sl_nic.ko
-rm -rf /dev/slnic
-rm -rf /dev/slnic/register  
-rm -rf /dev/slnic/stream  
-rm -rf /dev/slnic/slnic  
