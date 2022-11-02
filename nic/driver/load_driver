@@ -1,0 +1,4 @@
+insmod sl_nic.ko 
+chmod -R o+r+w /dev/slnic/
+ifconfig slnic0 up
+ifconfig slnic1 up

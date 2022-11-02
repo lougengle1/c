@@ -1,0 +1,10 @@
+#!/bin/sh
+counter_nf5=$(lspci | grep Eth | grep 8009:0003 | wc -l)
+counter_nf10=$(lspci | grep Eth | grep 8009:0003 | wc -l)
+if [ "${counter_nf5}" -ge 1 ] || [ "${counter_nf10}" -ge 1 ]; then
+	/sbin/modprobe sl_nic >/dev/null 2>&1
+	chmod -R o+r+w /dev/slnic/
+	ifconfig slnic0 up
+	ifconfig slnic1 up
+fi
+exit 0
