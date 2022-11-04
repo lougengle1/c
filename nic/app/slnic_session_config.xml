@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<sme_conf>
+  <CHANNEL ID="2" enable="1">
+    <session ID="0">
+     <s_mac value="00:0f:53:50:a2:11"/><d_mac value=""/><s_ip value="192.172.2.50"/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value="udp"/><cpu value="1"/>
+    </session>
+    <session ID="1">
+     <s_mac value="13:12:12:12:12:12"/><d_mac value="12:12:12:12:12:12"/><s_ip value="1.1.1.1"/><d_ip value="1.1.1.1"/><s_port value="10000"/><d_port value="10001"/><data_type value="udp"/><cpu value="1"/>
+    </session>
+    <session ID="2">
+     <s_mac value="14:12:12:12:12:12"/><d_mac value="12:12:12:12:12:12"/><s_ip value="1.1.1.1"/><d_ip value="1.1.1.1"/><s_port value="10000"/><d_port value="10001"/><data_type value="udp"/><cpu value="1"/>
+    </session>
+    <session ID="3">
+     <s_mac value="14:12:12:12:12:12"/><d_mac value="12:12:12:12:12:12"/><s_ip value="1.1.1.1"/><d_ip value="1.1.1.1"/><s_port value="10000"/><d_port value="10001"/><data_type value="udp"/><cpu value="1"/>
+    </session>
+  </CHANNEL>
+  
+  <CHANNEL ID="3" enable="0">
+    <session ID="0">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="1">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="2">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="3">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+  </CHANNEL>
+  
+   <CHANNEL ID="4" enable="0">
+    <session ID="0">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="1">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="2">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="3">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+  </CHANNEL>
+  
+  <CHANNEL ID="5" enable="0">
+    <session ID="0">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="1">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="2">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="3">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+  </CHANNEL>
+  
+  <CHANNEL ID="6" enable="0">
+    <session ID="0">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="1">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="2">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="3">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+  </CHANNEL>
+  
+    <CHANNEL ID="7" enable="0">
+    <session ID="0">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="1">
+     <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="2">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+    <session ID="3">
+      <s_mac value=""/><d_mac value=""/><s_ip value=""/><d_ip value=""/><s_port value=""/><d_port value=""/><data_type value=""/><cpu value="-1"/>
+    </session>
+  </CHANNEL>
+  
+</sme_conf>

@@ -1,0 +1,25 @@
+
+make clean
+make debug
+make release
+
+DRIVER_DIR=~/shengli_driver/trunk/project/sl_nic_porch
+
+mkdir EFH_Porch_publish -p
+mkdir EFH_Porch_publish/api -p
+mkdir EFH_Porch_publish/api/interface -p
+mkdir EFH_Porch_publish/api/lib -p
+mkdir EFH_Porch_publish/demo -p
+mkdir EFH_Porch_publish/driver -p
+
+cp -r interface/*.h EFH_Porch_publish/api/interface/
+cp -r lib/* EFH_Porch_publish/api/lib
+cp test_main.cc EFH_Proch_publish/demo/demo.cpp
+cp demo.mk EFH_Proch_publish/demo/Makefile
+
+cd ${DRIVER_DIR}
+sh publish.sh
+cd -
+mv ${DRIVER_DIR}/*.tar.gz EFH_Proch_publish/driver
+
+make clean

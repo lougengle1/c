@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="demo.mk" />
+    <None Include="demo_speed.mk" />
+    <None Include="publish.sh" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="device_handle">
+      <UniqueIdentifier>{0483960d-2498-466e-81f2-f49991777f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{1208404d-4cd1-4f9e-9699-484f2ec01de6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tool_lib">
+      <UniqueIdentifier>{501b1ad8-f13b-41aa-a39b-5747dde02b2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="device_handle\channel_controler.cpp">
+      <Filter>device_handle</Filter>
+    </ClCompile>
+    <ClCompile Include="device_handle\reg_controler.cpp">
+      <Filter>device_handle</Filter>
+    </ClCompile>
+    <ClCompile Include="tool_lib\efh_loger.cpp">
+      <Filter>tool_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="test_main.cc" />
+    <ClCompile Include="slnic.cpp" />
+    <ClCompile Include="test_main_speed_test.cc" />
+    <ClCompile Include="device_handle\net_info.cpp">
+      <Filter>device_handle</Filter>
+    </ClCompile>
+    <ClCompile Include="device_handle\open_ioctl_close.cpp">
+      <Filter>device_handle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="device_handle\channel_controler.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="device_handle\device_define.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="device_handle\perform_define.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="device_handle\reg_controler.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="device_handle\spin_lock.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_lib\efh_loger.h">
+      <Filter>tool_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_lib\perform_define.h">
+      <Filter>tool_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="tool_lib\spin_lock.h">
+      <Filter>tool_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="interface\i_slnic.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="slnic.h" />
+    <ClInclude Include="device_handle\net_info.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+    <ClInclude Include="device_handle\open_ioctl_close.h">
+      <Filter>device_handle</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
