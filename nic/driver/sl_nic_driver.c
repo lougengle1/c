@@ -30,8 +30,8 @@ module_param(debug, int, 0);
 MODULE_PARM_DESC(debug, "Debug level (0=none,...,16=all)");
 
 static struct cherry_kiwi_adapter		g_driver_data[SLNIC_MAX_NUM_DEVICES];
-static unsigned slnic_count = 0;
-static struct class *slnic_class;
+static unsigned 						slnic_count = 0;
+static struct class 					*slnic_class;
 
 
 
@@ -55,7 +55,7 @@ static void pci_disable_irq(struct cherry_kiwi_adapter *p_driver_data)
 
 static void constructor(struct cherry_kiwi_adapter * p_driver_data)
 {
-	p_driver_data->m_e_rls = em_rls_ctrl_init; ///Ð¶ÔØ×ÊÔ´¿ØÖÆµÄ³õÊ¼Ì¬
+	p_driver_data->m_e_rls = em_rls_ctrl_init; ///Ð¶ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ÆµÄ³ï¿½Ê¼Ì¬
 	p_driver_data->m_mem_base0 = 0;
 	p_driver_data->m_mem_base1 = 0;
 	p_driver_data->m_mem_base11 = 0;
@@ -232,7 +232,7 @@ static void slnic_set_time(struct cherry_kiwi_adapter *p_driver_data)
 {
 	struct timespec ts;
 	getnstimeofday(&ts);
-	///ÃëºÍÄÉÃëÊýÅäÖÃÏÂÈ¥
+	///ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥
 	WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_HMS, ts.tv_sec);
 	WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_NS, ts.tv_nsec);
 	WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_CTRL, 0x40000001);
@@ -246,7 +246,7 @@ static void slnic_set_time_rest(int slnic_count)
 	for (i = 0;  i < slnic_count;  i++)
 	{
 		struct cherry_kiwi_adapter *p_driver_data = g_driver_data + i;
-		///ÃëºÍÄÉÃëÊýÅäÖÃÏÂÈ¥
+		///ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥
 		WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_HMS, ts.tv_sec);
 		WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_NS, ts.tv_nsec);
 		WRITE_REG(p_driver_data->m_mem_base0, SYS_TIME_CTRL, 0x40000001);
@@ -393,13 +393,11 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 
 	struct cherry_kiwi_adapter *p_driver_data = g_driver_data+slnic_count;
 	memset(p_driver_data, 0, sizeof(struct cherry_kiwi_adapter));
-	p_driver_data->m_id = slnic_count+1;
+	p_driver_data->m_id = slnic_count++;
 	p_driver_data->m_dev_pci = pdev;
 	p_driver_data->m_borad_port_num = SLNIC_MAX_PORTS;
 
-
-
-	///¹¹Ôì
+	///åˆå§‹åŒ–å˜é‡
 	constructor(p_driver_data);
 
 	result = pci_enable_device(pdev);
@@ -421,9 +419,9 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	pci_set_drvdata(pdev, p_driver_data);
 	pci_set_master(pdev);
 
-	///ÖØÆôÉè±¸
+	///ï¿½ï¿½ï¿½ï¿½ï¿½è±¸
 	{
-		/*½«pci¼Ä´æÆ÷Ó³Éäµ½ÄÚ´æ¿Õ¼ä*/
+		/*ï¿½ï¿½pciï¿½Ä´ï¿½ï¿½ï¿½Ó³ï¿½äµ½ï¿½Ú´ï¿½Õ¼ï¿½*/
 		mapping_bars(p_driver_data);
 
 		value = READ_REG(p_driver_data->m_mem_base0, SYS_STATUS);
@@ -445,7 +443,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 		mapping_bars(p_driver_data);
 	}
 
-	//ÉèÖÃ×Ö·ûÉè±¸
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½è±¸
 	p_driver_data->m_reg_dev = MKDEV(KIWI_REG_CHAR_MAJOR, register_minor);
 	cdev_init(&p_driver_data->m_dev_reg, &g_fop_control);
 
@@ -470,7 +468,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	register_minor++;
 
 
-	// Êý¾ÝÁ÷´¦Àí
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	p_driver_data->m_stream_dev = MKDEV(KIWI_STREAM_CHAR_MAJOR, stream_minor);
 	cdev_init(&p_driver_data->m_dev_stream, &g_fop_stream);
 	p_driver_data->m_dev_stream.owner = THIS_MODULE;
@@ -516,7 +514,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	}
 	slnic_minor++;
 
-//	memory·½Ê½
+//	memoryï¿½ï¿½Ê½
 	p_driver_data->m_tx_count.m_vis_addr = dma_alloc_coherent(&(pdev->dev), PAGE_SIZE, &p_driver_data->m_tx_count.m_dam_addr, GFP_KERNEL);
 	if (!p_driver_data->m_tx_count.m_vis_addr)
 	{
@@ -571,7 +569,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 		goto out;
 	}
 
-	//ÍøÂçÉè±¸µÄÉêÇëºÍ×¢ÊÍ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½è±¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½
 	for (port_num=0 ; port_num < p_driver_data->m_borad_port_num; port_num++)
 	{
 		result = slnic_netdev_alloc(&p_driver_data->ndev[port_num],port_num, p_driver_data);
@@ -587,7 +585,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	SLK_CLCOK_SETUP(&p_driver_data->m_link_timer, slnic_link_timer_callback, (unsigned long)(p_driver_data));
 	mod_timer(&p_driver_data->m_link_timer, jiffies + HZ);
 
-	 //Ó²¼þÊ±¼ä´Á½ÃÕý
+	 //Ó²ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	SLK_CLCOK_SETUP(&p_driver_data->m_time_stamp, slnic_rectify_hwtime_callback, (unsigned long)(p_driver_data));
 	mod_timer(&p_driver_data->m_time_stamp, jiffies + HZ*3600);
 	
@@ -606,7 +604,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 #ifndef SLK_QUEM_EVN
 	pci_set_payload(pdev);
 
-	 //ÉèÖÃpcieµÄ×î´óÖµ
+	 //ï¿½ï¿½ï¿½ï¿½pcieï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 	max_payload = read_pcie_parent_maxpayload(pdev);
 	if (max_payload == 0 || max_payload == 1)
 	{
@@ -614,7 +612,7 @@ static int sl_pci_probe(struct pci_dev *pdev, const struct pci_device_id *id)
 	}
 #endif
 
-	///ÅäÖÃÊ±¼ä
+	///ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	
 
 	pci_enable_irq(p_driver_data);
@@ -644,7 +642,7 @@ static int __init sl_nic_init_module(void)
 {
 	sl_debug("net dev in");
 
-	//´´½¨Éè±¸Àà
+	//ï¿½ï¿½ï¿½ï¿½ï¿½è±¸ï¿½ï¿½
 	slnic_class = class_create(THIS_MODULE, DEVICE_NAME);
 	if (IS_ERR(slnic_class)) {
 		sl_error("slnic_class class_create [slnic_count:%d]\n", slnic_count);
