@@ -1,5 +1,12 @@
 #include "static1.h"
 static int i =0;
+
+static int func6()
+{
+    int i_count=10;
+    i_count++;
+}
+
 void func1()
 {
     i++;
@@ -26,6 +33,7 @@ int main()
     func3();
     func4();
     func5();
+    func6();
 
     return 0;
 }

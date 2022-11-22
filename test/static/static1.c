@@ -12,3 +12,9 @@ void func5()
 {
     y++;
 }
+
+static int func6()
+{
+    int i_count=10;
+    i_count++;
+}
